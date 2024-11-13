@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './RowPost.css'
+import axios from 'axios'
+import { api} from '../../Constants/Constants'
 
 function RowPost() {
+    useEffect(() => {
+        axios.get(`/discover/tv?api_key=${api}&with_networks=213`).then(response=>{
+            console.log(response);
+        })
+      },[])
     return (
         <div className='row'>
             <h2 className="title">title</h2>
